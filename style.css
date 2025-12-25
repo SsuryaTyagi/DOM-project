@@ -178,3 +178,41 @@ html,body{
 .allTask .task button:active{
     scale: 0.96;
 }
+
+/* daily planner */
+.daily-planner-fullpage .daily-planner{
+    background-color: var(--tri2);
+    width: 98%;
+    height: 750px;
+    margin-top: 50PX;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto; 
+   justify-content: space-around;
+}
+.daily-planner-fullpage .daily-planner .planner{
+    background-color:var(--sec);
+    height: 5.5rem;
+    width: 48%;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size:1em;  
+    margin-bottom: 10px;
+    color: var(--tri1);
+}
+.daily-planner .planner input{
+    width:100%;
+    font-size: 1.5em;  
+    padding: 15px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: var(--sec);
+}
+
+.daily-planner-fullpage .daily-planner::-webkit-scrollbar {
+  display: none;
+}
