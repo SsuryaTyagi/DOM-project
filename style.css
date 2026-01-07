@@ -216,3 +216,57 @@ html,body{
 .daily-planner-fullpage .daily-planner::-webkit-scrollbar {
   display: none;
 }
+.main-moti{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.motivation1{
+    width: 65%;
+     padding:20px;
+    background: var(--tri1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    /* filter: blur(100px); */
+}
+.motivation1 .motivation2{
+    background-color: var(--tri2);
+    border-radius: 20px;
+    padding:20px;
+}
+.motivation2 p{
+    font-size: 3em;
+    margin-top: 20px
+
+}
+.motivation2 h3{
+   display: flex;
+   justify-content: end;
+   font-size: 2em;
+   margin-top: 10px;
+}
+.time{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.time h1 {
+    color: var(--pri);
+    font-size: 200px;
+    font-weight:bolder;
+
+}
+.time button{
+    padding: 10px 50px;
+    margin-left:30px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: var(--tri2);
+}
