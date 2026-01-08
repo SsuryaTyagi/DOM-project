@@ -166,6 +166,75 @@ button[2].addEventListener("click", () => {
 }
 pomo();
 
+const API_KEY = '8b168303a90bf68e6a4c69df072e3472'; 
 
 
+const dateTime = document.querySelector(".date-time");
+const locationEl = document.querySelector(".location");
+const tempEl = document.querySelector(".temp");
+const detailsEl = document.querySelector(".details");
 
+async function weather(city = "Panipat") {
+  const res = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+  );
+
+  const data = await res.json();
+
+  const now = new Date();
+  const day = now.toLocaleDateString("en-US", { weekday: "long" });
+  const time = now.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+  });
+
+  dateTime.innerHTML = `${day}, ${time}`;
+
+  locationEl.innerHTML = `${data.name}, ${data.sys.country}`;
+
+  tempEl.innerHTML = `${Math.round(data.main.temp)}° C`;
+
+  detailsEl.innerHTML = `
+    ${data.weather[0].description}<br>
+    Humidity: ${data.main.humidity}%<br>
+    Wind: ${Math.round(data.wind.speed * 3.6)} km/h
+  `;
+}
+
+weather();
+
+
+const Theme = document.querySelector(".theme");
+
+const root = document.documentElement
+let code = 0;
+
+
+Theme.addEventListener("click", () => {
+
+  if (code === 0) {
+    root.style.setProperty("--pri", "#EAEAEA");
+    root.style.setProperty("--sec", "#0F0F0F");
+    root.style.setProperty("--tri1", "#FEBA17");
+    root.style.setProperty("--tri2", "#1F1F1F");
+    code = 1;
+
+  } else if (code === 1) {
+    root.style.setProperty("--pri", "#FAF6EA");
+    root.style.setProperty("--sec", "#2E1608");
+    root.style.setProperty("--tri1", "#F4B400");
+    root.style.setProperty("--tri2", "#6A4328");
+
+    code = 2;
+
+  } else {
+    root.style.setProperty("--pri", "#F8F4E1");
+    root.style.setProperty("--sec", "#3f1900");
+    root.style.setProperty("--tri1", "#FEBA17");
+    root.style.setProperty("--tri2", "#74512D");
+    code = 0;
+  }
+
+});
+
+// https://img.freepik.com/free-photo/glowing-lightbulb-with-idea-concept_23-2152020520.jpg

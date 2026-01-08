@@ -38,10 +38,12 @@ html,body{
 .AllElem{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
     position: absolute;
-        padding: 50px;
+    margin-top: 20px;
+            padding: 50px;
+
 }
 .elem:active{
     scale: 0.96;
@@ -269,4 +271,35 @@ html,body{
     font-size: 20px;
     font-weight: 700;
     background-color: var(--tri2);
+}
+.top{
+    width: 100%;
+    height: 300px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    background-image: url("https://img.freepik.com/free-photo/hot-air-balloon-realistic-dreamscape_23-2151763016.jpg?t=st=1767903469~exp=1767907069~hmac=5c26ca29afee38268142a1ab017a7cd80b9afa19329a874a0643b1c55820aa13&w=1480");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+ .top div h1,h2{
+    font-size: 80px;
+    font-weight: 900;
+ }
+ nav{
+    width: 100%;
+    background-color: var(--tri2);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+ }
+nav button{
+    padding: 8px 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
 }
